@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="org.eclipse.lsp4e.php" version="0.0.0">
+      <category name="lsp4e-php"/>
+   </bundle>
+   <bundle id="org.eclipse.lsp4e" version="0.0.0">
+      <category name="dep"/>
+   </bundle>
+   <bundle id="org.eclipse.lsp4e.languages" version="0.0.0">
+      <category name="dep"/>
+   </bundle>
+   <bundle id="org.eclipse.lsp4j" version="0.0.0">
+      <category name="dep"/>
+   </bundle>
+   <bundle id="org.eclipse.lsp4j.jsonrpc" version="0.0.0">
+      <category name="dep"/>
+   </bundle>
+   <bundle id="org.eclipse.ui.genericeditor" version="0.0.0">
+      <category name="dep"/>
+   </bundle>
+   <bundle id="com.google.gson" version="0.0.0">
+      <category name="dep"/>
+   </bundle>
+   <bundle id="org.eclipse.xtext.xbase.lib" version="0.0.0">
+      <category name="dep"/>
+   </bundle>
+   <feature id="tm-feature" version="0.0.0">
+      <category name="dep"/>
+   </feature>
+   <category-def name="lsp4e-php" label="LSP4E-PHP">
+      <description>
+         Integrates the PHP Language Server with LSP4E.
+      </description>
+   </category-def>
+   <category-def name="dep" label="Dependencies">
+      <description>
+         Required dependencies.
+      </description>
+   </category-def>
+</site>

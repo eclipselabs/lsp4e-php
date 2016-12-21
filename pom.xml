@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.lsp4e.php</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <tycho-version>0.26.0</tycho-version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>neon</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/releases/neon/</url>
+        </repository>
+        <repository>
+            <id>lsp4e</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/lsp4e/snapshots/</url>
+        </repository>
+        <repository>
+            <id>textmate4e</id>
+            <layout>p2</layout>
+            <url>http://oss.opensagres.fr/textmate/1.0.0-SNAPSHOT/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>org.eclipse.lsp4e.php</module>
+        <module>org.eclipse.lsp4e.php-repository</module>
+    </modules>
+</project>

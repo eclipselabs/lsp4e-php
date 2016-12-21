@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: PHP Plugin for LSP4E
+Bundle-Name: PHP Language Server Integration
 Bundle-SymbolicName: org.eclipse.lsp4e.php;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: org.eclipse.lsp4e.php.Activator
-Bundle-Vendor: Eclipse.org
+Bundle-Vendor: EclipseLabs.org
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jface.text,
  org.eclipse.lsp4e,
