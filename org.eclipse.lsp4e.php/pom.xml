@@ -9,4 +9,34 @@
     </parent>
     <artifactId>org.eclipse.lsp4e.php</artifactId>
     <packaging>eclipse-plugin</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                       <phase>prepare-package</phase>
+                       <configuration>
+                           <target>
+                               <get src="https://github.com/mniewrzal/php-language-server/archive/master_old_but_working.zip"
+                                    dest="${project.build.directory}/php-language-server.zip"/>
+                               <unzip src="${project.build.directory}/php-language-server.zip"
+                                      dest="${project.build.directory}"/>
+                               <move todir="${project.build.directory}/server">
+                                   <fileset dir="${project.build.directory}/php-language-server-master_old_but_working"/>
+                               </move>
+                               <delete dir="${project.build.directory}/php-language-server-master_old_but_working"/>
+                               <delete file="${project.build.directory}/php-language-server.zip"/>
+                           </target>
+                       </configuration>
+                       <goals>
+                           <goal>run</goal>
+                       </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
