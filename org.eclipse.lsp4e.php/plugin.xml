@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="php"
+            id="org.eclipse.lsp4e.php"
+            name="PHP"
+            priority="normal">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.lsp4e.languageServer">
+      <server
+            class="org.eclipse.lsp4e.php.PHPLanguageServer"
+            id="com.eclipse.lsp4e.php.server"
+            label="PHP Language Server">
+      </server>
+      <contentTypeMapping
+            contentType="org.eclipse.lsp4e.php"
+            id="com.eclipse.lsp4e.php.server">
+      </contentTypeMapping>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.presentationReconcilers">
+      <presentationReconciler
+            class="org.eclipse.tm4e.ui.text.TMPresentationReconciler"
+            contentType="org.eclipse.lsp4e.php">
+      </presentationReconciler>
+   </extension>
+   <extension
+         point="org.eclipse.tm4e.core.grammars">
+      <grammar
+      		scopeName="text.html.php"
+            path="./syntaxes/php.tmLanguage.json" >
+      </grammar>      
+      <scopeNameContentTypeBinding
+            contentTypeId="org.eclipse.lsp4e.php"
+            scopeName="text.html.php">
+      </scopeNameContentTypeBinding>
+   </extension>
+
+</plugin>

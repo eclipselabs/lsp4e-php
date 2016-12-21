@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PHP Plugin for LSP4E
+Bundle-SymbolicName: org.eclipse.lsp4e.php;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.lsp4e.php.Activator
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.lsp4e,
+ org.eclipse.ui,
+ org.eclipse.ui.genericeditor,
+ org.eclipse.tm4e.core,
+ org.eclipse.tm4e.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
