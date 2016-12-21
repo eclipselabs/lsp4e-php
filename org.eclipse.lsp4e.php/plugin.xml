@@ -41,5 +41,12 @@
             scopeName="text.html.php">
       </scopeNameContentTypeBinding>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editorContentTypeBinding
+            contentTypeId="org.eclipse.lsp4e.php"
+            editorId="org.eclipse.ui.genericeditor.GenericEditor">
+      </editorContentTypeBinding>
+   </extension>
 
 </plugin>

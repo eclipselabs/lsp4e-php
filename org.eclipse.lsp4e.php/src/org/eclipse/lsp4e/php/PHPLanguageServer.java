@@ -10,23 +10,34 @@
  *******************************************************************************/
 package org.eclipse.lsp4e.php;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.lsp4e.LanguageServerPlugin;
 import org.eclipse.lsp4e.ProcessStreamConnectionProvider;
+import org.osgi.framework.Bundle;
 
 public class PHPLanguageServer extends ProcessStreamConnectionProvider {
-
-	private static final IPath LANGUAGE_SERVER_PATH = new Path("/home/wywrzal/git/php-language-server");
 
 	public PHPLanguageServer() {
 		List<String> commands = new ArrayList<>();
 		commands.add("php");
-		commands.add(LANGUAGE_SERVER_PATH.append("/bin/php-language-server.php").toOSString());
-		setCommands(commands);
-		setWorkingDirectory(LANGUAGE_SERVER_PATH.toOSString());
+
+		Bundle bundle = Activator.getContext().getBundle();
+		try {
+			Path path = new Path(FileLocator.toFileURL(FileLocator.find(bundle, new Path("server"), null)).getPath());
+			commands.add(path.append("/bin/php-language-server.php").toOSString());
+			setCommands(commands);
+			setWorkingDirectory(path.toOSString());
+		} catch (IOException e) {
+			LanguageServerPlugin.logError(e);
+		}
 	}
 
 }
