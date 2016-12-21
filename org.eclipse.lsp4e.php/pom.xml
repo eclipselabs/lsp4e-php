@@ -17,7 +17,7 @@
                 <version>1.8</version>
                 <executions>
                     <execution>
-                       <phase>prepare-package</phase>
+                       <phase>generate-resources</phase>
                        <configuration>
                            <target>
                                <get src="https://github.com/mniewrzal/php-language-server/archive/master_old_but_working.zip"
@@ -29,6 +29,11 @@
                                </move>
                                <delete dir="${project.build.directory}/php-language-server-master_old_but_working"/>
                                <delete file="${project.build.directory}/php-language-server.zip"/>
+                               <exec executable="composer">
+                                   <arg value="install"/>
+                                   <arg value="-d"/>
+                                   <arg value="${project.build.directory}/server"/>
+                               </exec>
                            </target>
                        </configuration>
                        <goals>
@@ -36,6 +41,21 @@
                        </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-packaging-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <additionalFileSets>
+                        <fileSet>
+                            <directory>${project.build.directory}</directory>
+                            <includes>
+                                <include>server/**</include>
+                            </includes>
+                        </fileSet>
+                    </additionalFileSets>
+                </configuration>
             </plugin>
         </plugins>
     </build>
