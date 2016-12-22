@@ -24,7 +24,7 @@ before_install:
   - sudo apt-get install -y curl git php7.0-cli php7.0-xml
   - curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
-deploy:
+after_success:
   # Upload the repository to the snapshot update site on Bintray
   # 1. Delete the snapshot version
   - curl -X DELETE -ukaloyan-raev:$BINTRAY_KEY https://api.bintray.com/packages/kaloyan-raev/lsp4e-php/update-site/versions/snapshot
