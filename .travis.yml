@@ -16,3 +16,9 @@ jdk: oraclejdk8
 cache:
   directories:
   - $HOME/.m2
+  - $HOME/.composer/cache
+
+before-install:
+  - sudo apt-get -qq update
+  - sudo apt-get install curl php5-cli git
+  - curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
