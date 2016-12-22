@@ -42,7 +42,7 @@ public class PHPLanguageServer implements StreamConnectionProvider {
 		} catch (IOException e) {
 			LanguageServerPlugin.logError(e);
 		}
-		if (!Platform.getOS().equals(Platform.OS_WIN32)) {
+		if (Platform.getOS().equals(Platform.OS_WIN32)) {
 			commands.add("--tcp=127.0.0.1:" + CONNECTION_PORT);
 			provider = new SocketStreamConnectionProvider(commands, workingDir.toOSString(), CONNECTION_PORT);
 		} else {
