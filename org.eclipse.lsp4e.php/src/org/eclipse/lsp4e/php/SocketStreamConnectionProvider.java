@@ -7,9 +7,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
 
-import org.eclipse.lsp4e.ProcessStreamConnectionProvider;
+import org.eclipse.lsp4e.server.ProcessStreamConnectionProvider;
 
-@SuppressWarnings("restriction")
 public class SocketStreamConnectionProvider extends ProcessStreamConnectionProvider {
 
 	private int port;

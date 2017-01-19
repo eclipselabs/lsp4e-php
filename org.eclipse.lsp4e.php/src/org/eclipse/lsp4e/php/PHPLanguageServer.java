@@ -20,11 +20,10 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.lsp4e.LanguageServerPlugin;
-import org.eclipse.lsp4e.ProcessStreamConnectionProvider;
-import org.eclipse.lsp4e.StreamConnectionProvider;
+import org.eclipse.lsp4e.server.ProcessStreamConnectionProvider;
+import org.eclipse.lsp4e.server.StreamConnectionProvider;
 import org.osgi.framework.Bundle;
 
-@SuppressWarnings("restriction")
 public class PHPLanguageServer implements StreamConnectionProvider {
 
 	private static final int CONNECTION_PORT = 29543;
