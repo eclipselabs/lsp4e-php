@@ -31,6 +31,6 @@ The update site is automatically updated by the [Travis CI build](https://travis
 
 To use features provided by this plugin just open PHP file with **Generic Editor** (_Open With -> Generic Text Editor_).
 
-## Screenshots
+## Demo
 
-![Integration screenshot](images/screenshot.png)
+![Demo](images/demo.gif)
