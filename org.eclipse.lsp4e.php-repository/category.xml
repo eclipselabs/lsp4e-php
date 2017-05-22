@@ -6,9 +6,6 @@
    <bundle id="org.eclipse.lsp4e" version="0.0.0">
       <category name="dep"/>
    </bundle>
-   <bundle id="org.eclipse.lsp4e.languages" version="0.0.0">
-      <category name="dep"/>
-   </bundle>
    <bundle id="org.eclipse.lsp4j" version="0.0.0">
       <category name="dep"/>
    </bundle>
