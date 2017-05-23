@@ -21,6 +21,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.lsp4e.LanguageServerPlugin;
 import org.eclipse.lsp4e.server.ProcessStreamConnectionProvider;
+import org.eclipse.lsp4e.server.ProcessOverSocketStreamConnectionProvider;
 import org.eclipse.lsp4e.server.StreamConnectionProvider;
 import org.osgi.framework.Bundle;
 
@@ -36,16 +37,18 @@ public class PHPLanguageServer implements StreamConnectionProvider {
 		Bundle bundle = Activator.getContext().getBundle();
 		Path workingDir = Path.EMPTY;
 		try {
-			workingDir = new Path(FileLocator.toFileURL(FileLocator.find(bundle, new Path("server"), null)).getPath());
-			commands.add(workingDir.append("/bin/php-language-server.php").toOSString());
+			workingDir = new Path(FileLocator.toFileURL(FileLocator.find(bundle, new Path("vendor"), null)).getPath());
+			commands.add(workingDir.append("/felixfbecker/language-server/bin/php-language-server.php").toOSString());
 		} catch (IOException e) {
 			LanguageServerPlugin.logError(e);
 		}
 		if (Platform.getOS().equals(Platform.OS_WIN32)) {
 			commands.add("--tcp=127.0.0.1:" + CONNECTION_PORT);
-			provider = new SocketStreamConnectionProvider(commands, workingDir.toOSString(), CONNECTION_PORT);
+			provider = new ProcessOverSocketStreamConnectionProvider(commands, workingDir.toOSString(), CONNECTION_PORT) {
+			};
 		} else {
-			provider = new ProcessStreamConnectionProvider(commands, workingDir.toOSString());
+			provider = new ProcessStreamConnectionProvider(commands, workingDir.toOSString()) {
+			};
 		}
 	}
 
