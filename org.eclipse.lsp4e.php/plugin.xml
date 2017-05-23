@@ -31,22 +31,22 @@
       </presentationReconciler>
    </extension>
    <extension
-         point="org.eclipse.tm4e.core.grammars">
-      <grammar
-      		scopeName="text.html.php"
-            path="./syntaxes/php.tmLanguage.json" >
-      </grammar>      
-      <scopeNameContentTypeBinding
-            contentTypeId="org.eclipse.lsp4e.php"
-            scopeName="text.html.php">
-      </scopeNameContentTypeBinding>
-   </extension>
-   <extension
          point="org.eclipse.ui.editors">
       <editorContentTypeBinding
             contentTypeId="org.eclipse.lsp4e.php"
             editorId="org.eclipse.ui.genericeditor.GenericEditor">
       </editorContentTypeBinding>
+   </extension>
+   <extension
+         point="org.eclipse.tm4e.registry.grammars">
+      <grammar
+            path="syntaxes/php.tmLanguage.json"
+            scopeName="text.html.php">
+      </grammar>
+      <scopeNameContentTypeBinding
+            contentTypeId="org.eclipse.lsp4e.php"
+            scopeName="text.html.php">
+      </scopeNameContentTypeBinding>
    </extension>
 
 </plugin>

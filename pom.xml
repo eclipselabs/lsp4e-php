@@ -25,7 +25,7 @@
         <repository>
             <id>textmate4e</id>
             <layout>p2</layout>
-            <url>http://oss.opensagres.fr/textmate/0.1.0-SNAPSHOT/</url>
+            <url>http://download.eclipse.org/tm4e/snapshots/</url>
         </repository>
         <repository>
         		<id>orbit</id>
