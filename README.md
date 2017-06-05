@@ -1,5 +1,9 @@
 # lsp4e-php
 
+### This repository is now part of https://github.com/eclipselabs/language-servers-for-eclipse
+
+***
+
 [![Build Status](https://travis-ci.org/eclipselabs/lsp4e-php.svg?branch=master)](https://travis-ci.org/eclipselabs/lsp4e-php)
 
 Integration of the PHP Language Server with LSP4E. 
