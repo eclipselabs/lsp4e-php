@@ -9,6 +9,8 @@
 #   Rogue Wave Software Inc. - initial implementation
 ########################################################################
 
+dist: trusty
+
 language: java
 
 jdk: oraclejdk8
